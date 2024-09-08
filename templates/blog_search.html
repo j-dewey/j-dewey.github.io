@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
+    {% load static %}
     <head>
-        <link rel="stylesheet" href="main.css"/>       
+        <title>JD - Blog Search</title>
+        <link rel="stylesheet" href="{% static 'main.css' %}"/>  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">     
     </head>
 
     <body>
-        <div class="header" style="background-image: url(../assets/waves.jpeg);">
+        <div class="post-header" style="background-image: url({% static 'assets/waves.jpeg' %});">
             <div class="header-content">
-                <h1>Jared Dewey</h1>
-                <ul class="horizontal">
-                    <li> <a href="index.html">Home</a> </li>
-                </ul>
+                <h1>Blog Search</h1>
+                <nav class="horizontal">
+                    <a href="/"> <button> Home </button> </a>
+                </nav>
             </div>
         </div>
-        <div class="header-copy"></div>
-        <div class="body">
-            <hr/>
-            <div id="blog-preview"></div>
-        </div>
+
+        <hr/>
+
+        <main class="body">
+            <table id="blog-search"> 
+                <tr> 
+                    <th> Image </th>
+                    <th> Name </th>
+                    <th> Description </th>
+                    <th> Publication Date </th>
+                    <th> Internal Name </th>
+                </tr>
+                {% load render_name %}
+                {% block render_blog_search %}
+                    {% for post in posts %}
+                        <tr>
+                            <td> {{ post.img_name }} </td>
+                            <td> {{ post.blog_name|render_name }} </td>
+                            <td> {{ post.preview }} </td>
+                            <td> {{ post.pub_date }} </td>
+                            <td> {{ post.blog_name }} </td>
+                        </tr>        
+                    {% endfor %}
+                {% endblock render_blog_search %}
+
+            </table>
+
+        </main>
         <div class="footer"></div>
     </body>
 </html>

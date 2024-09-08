@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title> JD - Hello, World! </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main.css' %}"/>       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <header class = "post-header" style="background-image: url({% static 'assets/waves.jpeg' %});">
+            <div class = "post-title">
+                <h1>Hello, World!</h1>
+                <nav class="horizontal">
+                    <a href="/">Home</a>
+                </nav>
+            </div>
+        </header>
+
+        <hr/>
+
+        <main class="post-body">
+            <div class="vertical-body-block">
+                <p> 
+                    I've seen a lot of people agree with this sentiment, but have never really seen it talked about before. 
+                    Summer is pretty boring. I'll grant that the first few weeks are a nice break from school life, but then
+                    it's all down hill after that. Getting a job can help slow the fall, yet the fall comes all the same.
+                    All of this is to say I found myself very bored this summer. With boredom comes the need to find something
+                    to do, and necessity is the mother of invention. All of this is to say that I thought, "Hey, maybe I should 
+                    start a blog!"
+                </p>
+                <p>
+                    A month of looking into web hosts, servers, and domain providers later, here we are. I'm not entirely sure 
+                    what I'll talk about on here yet, but this blog is gonna be the main point of this website. Initially I was
+                    thinking of just talking about current coding projects and any fun things that come up with them. That's not too 
+                    engaging though, so I'll probably add any thoughts I have about the world and rants about whatever. Random tech
+                    demos will also probably show up. I have my own custom server set up afterall, so might as well have fun with
+                    it.
+                </p>
+                <p> 
+                    Anyway, that's what's up. Come back from time to time to check on new posts. If I feel like it, I might set up
+                    a mailing list.
+                </p>
+                <p> Bye </p>
+            </div>
+        </main>
+        <div class="footer"></div>
+    </body>
+</html>

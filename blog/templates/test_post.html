@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title> Test Post </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main.css' %}"/>    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    </head>
+
+    <body>
+        <header class = "post-header" style="background-image: url({% static 'assets/default.jpg' %});">
+            <div class = "post-title">
+                <h1>Test Post</h1>
+                <nav class="horizontal">
+                    <a href="/">Home</a>
+                </nav>
+            </div>
+        </header>
+        
+        <hr/>
+
+        <main class="post-body">
+            <div class="vertical-body-block">
+                <h3 class="vertical-body-block-first"> Sub Heading </h3>
+                <p> 
+                    This is just fun testing. Nothing is going on here. Check out the hello world post to see the real first blog post.
+                </p>
+                <h3> Another Sub Heading </h3>
+                <p>
+                    More text 
+                </p>
+            </div>
+        </main>
+        <div class="footer"></div>
+    </body>
+</html>
