@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <title>JD - Personal Site</title>
+        <link rel="stylesheet" href="src/main.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <div
+            class="header"
+            id="water_view"
+            style="background-image: url(assets/waves.jpeg)"
+        ></div>
+
+        <div class="header-space">
+            <div class="header-content">
+                <div class="title-with-buttons">
+                    <h1>Jared Dewey</h1>
+                    <nav class="horizontal">
+                        <a href="/blog"> <button>Blog</button> </a>
+                        <a href="/projects"> <button>Projects</button> </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <main class="body">
+            <hr />
+
+            <div class="body-block">
+                <img src="assets/person.jpeg" />
+                <p></p>
+            </div>
+
+            <hr />
+
+            <div class="body-block" id="blog-preview">
+                <!---
+                    This is going to be some django magic.
+                    Here is the basic format:
+
+                    <div class="blog_snippet">
+                        <img src="static/assets/img.png"/>
+                        <h6>Post Name</h6>
+                        <p>blah blah blah whatever the first lines of the post are...</p>
+                        <p id="snippet-date"></p>
+                    </div>
+                -->
+            </div>
+        </main>
+        <div class="footer"></div>
+        <script defer type="module" src="/main.js"></script>
+    </body>
+</html>

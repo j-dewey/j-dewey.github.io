@@ -1,0 +1,33 @@
+{
+  "name": "personal_site",
+  "version": "1.0.0",
+  "description": "My own personal website / portfolio!",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-dewey/personal_site.git"
+  },
+  "keywords": [
+    "personal_site",
+    "site",
+    "website"
+  ],
+  "author": "j-dewey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-dewey/personal_site/issues"
+  },
+  "homepage": "https://github.com/j-dewey/personal_site#readme",
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ol": "^10.4.0",
+    "three": "^0.177.0"
+  }
+}
