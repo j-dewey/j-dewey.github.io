@@ -1,27 +1,89 @@
-import * as THREE from "three";
+class ProjectBlock {
+  constructor(title) {
+    this.title = title;
+  }
 
-const view = document.getElementById("water_view");
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(
-  75,
-  view.clientWidth / view.clientHeight,
-  0.1,
-  1000,
-);
+  render() {
+    let div = document.createElement("div");
+    div.className = "content-block";
+    div.innerHTML = `
+      <img src="${this.title}.png" />
+      <div class="content">
+        <h3> ${this.title} </h3>
+        <p><b>Desc:</b> </p>
+      </div>
+    `;
+    return div;
+  }
+}
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(view.clientWidth, view.clientHeight);
-view.appendChild(renderer.domElement);
+class PaperBlock {
+  constructor(title, authors, desc) {
+    this.title = title;
+    this.authors = authors;
+    this.desc = desc;
+  }
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+  render_authors() {
+    let str = "";
+    for (const [i, auth] of this.authors.entries()) {
+      str += auth;
+      if (i != this.authors.length - 1) {
+        str += ",";
+      }
+      str += " ";
+    }
+    return str;
+  }
 
-camera.position.z = 5;
+  render() {
+    let div = document.createElement("div");
+    div.className = "content-block";
+    div.innerHTML = `
+      <img src="${this.title}.png" />
+      <div class="content">
+        <h3> ${this.title} </h3>
+        <p><b>Authors:</b> ${this.render_authors()} </p>
+        <p><b>Desc:</b> ${this.desc} </p>
+      </div>
+    `;
+    return div;
+  }
+}
 
-renderer.setAnimationLoop(() => {
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-  renderer.render(scene, camera);
-});
+const blocks = {
+  projects: [
+    new ProjectBlock("Fact Forecast"),
+    new ProjectBlock("Frosty Engine"),
+    new ProjectBlock("SillyBus"),
+    new ProjectBlock("William & Maps"),
+  ],
+  papers: [
+    new PaperBlock(
+      "Medication Diffusion",
+      ["Barlow", "Dewey", "Mitchell"],
+      "Bloopety Doopety",
+    ),
+    new PaperBlock(
+      "AI Weatherman",
+      ["Dewey", "Kollgaard", "Miller"],
+      "Bloopety Doopety",
+    ),
+    new PaperBlock(
+      "Trigger warning",
+      ["Dewey", "Leong", "Nayak"],
+      "Bloopety Doopety",
+    ),
+  ],
+};
+
+const projects = document.getElementById("projects");
+const papers = document.getElementById("papers");
+
+for (const proj of blocks.projects) {
+  projects.appendChild(proj.render());
+}
+
+for (const paper of blocks.papers) {
+  papers.appendChild(paper.render());
+}

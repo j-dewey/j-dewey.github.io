@@ -1,0 +1,27 @@
+.content-section {
+    width: 100%;
+}
+
+.content-block {
+    width: 75vw;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: aliceblue;
+    float: inherit;
+}
+
+.content-block:nth-child(even) {
+    float: right;
+}
+
+.content-block:nth-child(odd) {
+    float: left;
+}
+
+.content-block img {
+    aspect-ratio: 1/1;
+    height: 100%;
+}
+
+.content {
+}
