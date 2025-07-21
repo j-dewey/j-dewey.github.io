@@ -1,6 +1,19 @@
 class ProjectBlock {
-  constructor(title) {
+  constructor(title, technologies) {
     this.title = title;
+    this.technologies = technologies;
+  }
+
+  render_technologies() {
+    let str = "";
+    for (const [i, auth] of this.technologies.entries()) {
+      str += auth;
+      if (i != this.technologies.length - 1) {
+        str += ",";
+      }
+      str += " ";
+    }
+    return str;
   }
 
   render() {
@@ -11,6 +24,7 @@ class ProjectBlock {
       <div class="content">
         <h3> ${this.title} </h3>
         <p><b>Desc:</b> </p>
+        <p><b>Tech:</b> ${this.render_technologies()}</p>
       </div>
     `;
     return div;
@@ -53,10 +67,10 @@ class PaperBlock {
 
 const blocks = {
   projects: [
-    new ProjectBlock("Fact Forecast"),
-    new ProjectBlock("Frosty Engine"),
-    new ProjectBlock("SillyBus"),
-    new ProjectBlock("William & Maps"),
+    new ProjectBlock("Fact Forecast", ["Python", "FastAPI", "Docker", "RTDB"]),
+    new ProjectBlock("Frosty Engine", ["Rust", "WGSL"]),
+    new ProjectBlock("SillyBus", ["Python", "DJango", "Google Cloud API"]),
+    new ProjectBlock("William & Maps", ["Python", "Pygame"]),
   ],
   papers: [
     new PaperBlock(

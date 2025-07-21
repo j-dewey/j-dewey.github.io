@@ -1,3 +1,16 @@
+#about {
+    display: flex;
+}
+
+#about img {
+    float: left;
+}
+
+#bio {
+    float: right;
+    height: 100%;
+}
+
 .content-section {
     width: 100%;
 }
