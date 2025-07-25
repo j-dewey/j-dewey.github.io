@@ -1,92 +1,85 @@
-class ProjectBlock {
-  constructor(title, technologies) {
-    this.title = title;
-    this.technologies = technologies;
-  }
-
-  render_technologies() {
-    let str = "";
-    for (const [i, auth] of this.technologies.entries()) {
-      str += auth;
-      if (i != this.technologies.length - 1) {
-        str += ",";
-      }
-      str += " ";
-    }
-    return str;
-  }
-
-  render() {
-    let div = document.createElement("div");
-    div.className = "content-block";
-    div.innerHTML = `
-      <img src="${this.title}.png" />
-      <div class="content">
-        <h3> ${this.title} </h3>
-        <p><b>Desc:</b> </p>
-        <p><b>Tech:</b> ${this.render_technologies()}</p>
-      </div>
-    `;
-    return div;
-  }
-}
-
-class PaperBlock {
-  constructor(title, authors, desc) {
-    this.title = title;
-    this.authors = authors;
-    this.desc = desc;
-  }
-
-  render_authors() {
-    let str = "";
-    for (const [i, auth] of this.authors.entries()) {
-      str += auth;
-      if (i != this.authors.length - 1) {
-        str += ",";
-      }
-      str += " ";
-    }
-    return str;
-  }
-
-  render() {
-    let div = document.createElement("div");
-    div.className = "content-block";
-    div.innerHTML = `
-      <img src="${this.title}.png" />
-      <div class="content">
-        <h3> ${this.title} </h3>
-        <p><b>Authors:</b> ${this.render_authors()} </p>
-        <p><b>Desc:</b> ${this.desc} </p>
-      </div>
-    `;
-    return div;
-  }
-}
+import { ProjectBlock } from "./src/project";
+import { PaperBlock } from "./src/paper";
 
 const blocks = {
   projects: [
-    new ProjectBlock("Fact Forecast", ["Python", "FastAPI", "Docker", "RTDB"]),
-    new ProjectBlock("Frosty Engine", ["Rust", "WGSL"]),
-    new ProjectBlock("SillyBus", ["Python", "DJango", "Google Cloud API"]),
-    new ProjectBlock("William & Maps", ["Python", "Pygame"]),
+    new ProjectBlock(
+      "Fact Forecast",
+      ["Python", "FastAPI", "Docker", "RTDB"],
+      `An interactive map displaying fact checked and verified news articles
+       from all over the world. I was responsible for developing and deploying
+       the server backend
+      `,
+      "fact-forecast.png",
+      "https://fact.lab.nova.org",
+    ),
+    new ProjectBlock(
+      "Frosty Engine",
+      ["Rust", "WGSL"],
+      `A simple and modular game engine written in rust. Designed with simplicity
+       and a "it just works" philosophy. I am the sole developer.
+      `,
+      "frosty-engine.png",
+      "https://github.com/j-dewey/frosty_engine",
+    ),
+    new ProjectBlock(
+      "SillyBus",
+      ["Python", "DJango", "Google Cloud API", "Claude"],
+      `A web app leveraging AI to parse syllabi for important events. Those events
+       are then uploaded to a your selected Google Calendar. I developed the
+       backend - using Google Auth and connecting all our tech stack.
+      `,
+      "sillybus.png",
+      null,
+    ),
+    new ProjectBlock(
+      "William & Maps",
+      ["Python", "Pygame"],
+      `An interactive map of William & Mary that can find the quickest path
+       between any two buildings. Winner of the "Best Map & Data Hack" for
+       TribeHacks 2024. I designed the front end and developer tooling.
+      `,
+      "wm-maps.jpg",
+      null,
+    ),
   ],
   papers: [
     new PaperBlock(
-      "Medication Diffusion",
+      "A Simulation of Medication Suppression Acrosss Multiple Treatment Types",
       ["Barlow", "Dewey", "Mitchell"],
-      "Bloopety Doopety",
+      `A simulation of medication spreading around various types of tissue.
+       Explored different injection techniques across several medication types
+       and assesed their efficiency. I was responsible for the creation of the
+       simulation and graphs.
+      `,
+      "n/a",
+      "med_diffusion.pdf",
+      "med_diffusion.png",
     ),
     new PaperBlock(
       "AI Weatherman",
       ["Dewey", "Kollgaard", "Miller"],
-      "Bloopety Doopety",
+      `A regression model capable of determining a day's temperature based
+       on weather heuristics of the preceeding few days. Winner of the
+        first "Nazareth Area Science Project" science fair grades 9-12
+        division. I was responsible for the collection and cleaning of data
+        as well as creating different data sets.
+      `,
+      "n/a",
+      "weatherman.pdf",
+      "weatherman.png",
     ),
     new PaperBlock(
       "Trigger warning",
-      ["Dewey", "Leong", "Nayak"],
-      "Bloopety Doopety",
+      ["Nayak", "Leong", "Dewey", "Wozniak", "Callabresi"],
+      `An analysis of the public's response to horrific events on social media.
+       Two events in particular were studied to see how reactions corresponded
+       to policy changes over time. I assisted in the creaton of data collection
+       sorting, and presentation of data.
+      `,
+      "Diplomatic Courier",
+      "https://www.diplomaticourier.com/posts/accusations-of-corruption-calls-for-justice-for-women-in-kolkata",
+      "kolkata.jpg",
     ),
   ],
 };

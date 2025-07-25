@@ -17,10 +17,11 @@
 
 .content-block {
     width: 75vw;
+    height: 25vh;
     margin-top: 5%;
     margin-bottom: 5%;
     background-color: aliceblue;
-    float: inherit;
+    display: flex;
 }
 
 .content-block:nth-child(even) {
@@ -32,9 +33,11 @@
 }
 
 .content-block img {
+    max-height: 100%;
+    display: inherit;
     aspect-ratio: 1/1;
-    height: 100%;
 }
 
 .content {
+    display: block;
 }
