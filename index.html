@@ -9,6 +9,16 @@
     </head>
 
     <body>
+        <div class="page-nav">
+            <nav class="horizontal">
+                <a href="#projects">
+                    <button><h1>Projects</h1></button>
+                </a>
+                <a href="#papers">
+                    <button><h1>Papers</h1></button>
+                </a>
+            </nav>
+        </div>
         <div class="header">
             <div class="header-content">
                 <img src="public/me.png" />
@@ -37,17 +47,7 @@
                             <button>Runner</button>
                             <button>Programmer</button>
                         </div>
-                        <div class=""></div>
-                    </div>
-                    <div class="page-nav">
-                        <nav class="horizontal">
-                            <a href="#projects">
-                                <button><h1>Projects</h1></button>
-                            </a>
-                            <a href="#papers">
-                                <button><h1>Papers</h1></button>
-                            </a>
-                        </nav>
+                        <p id="interactive-bio-text"></p>
                     </div>
                 </div>
             </div>
@@ -55,18 +55,16 @@
 
         <main class="body">
             <div class="body-block" id="projects">
-                <h2>Projects</h2>
-
+                <h2 class="content-banner">Projects</h2>
                 <div class="content-section"></div>
             </div>
 
             <div class="body-block" id="papers">
-                <h2>Papers</h2>
+                <h2 class="content-banner">Papers</h2>
                 <div class="content-section"></div>
             </div>
         </main>
 
-        <div class="footer"></div>
         <script defer type="module" src="/main.js"></script>
     </body>
 </html>

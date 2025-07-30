@@ -1,6 +1,7 @@
 body {
     padding: 0%;
     margin: 0%;
+    background: linear-gradient(skyblue, rgb(46, 121, 151));
 }
 
 .header {
@@ -20,12 +21,18 @@ body {
     padding-left: 1em;
     padding-right: 1em;
     float: left;
+    margin: auto;
+}
+
+.header-content p {
+    text-align: left;
 }
 
 .header-text {
     display: block;
     text-align: center;
     float: right;
+    margin: 1em;
 }
 
 .page-nav {
@@ -76,18 +83,18 @@ body {
 #about {
     float: left;
     min-height: 100 px;
-    background: linear-gradient(red, blue);
+    background: skyblue;
 }
 
 #projects {
     float: right;
     min-height: 100 px;
-    background: linear-gradient(red, blue);
+    background: linear-gradient(skyblue, rgb(36, 135, 176));
 }
 
 #papers {
     text-align: left;
     float: left;
     min-height: 100 px;
-    background: linear-gradient(red, blue);
+    background: linear-gradient(rgb(36, 135, 176), rgb(46, 121, 151));
 }

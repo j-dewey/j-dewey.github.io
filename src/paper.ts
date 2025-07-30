@@ -38,7 +38,7 @@ class PaperBlock {
     let div = document.createElement("div");
     div.className = "content-block";
     div.innerHTML = `
-      <a href="${this.link}" class="content-image"><img src="${this.image}"/></a>
+      <a href="${this.link}" class="content-image"><img src="public/${this.image}"/></a>
       <div class="content">
         <h3> ${this.title} </h3>
         <p><b>Authors:</b> ${this.render_authors()} </p>

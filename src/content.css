@@ -2,17 +2,32 @@
     display: flex;
 }
 
+.content-banner {
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    margin-top: 10vh !important;
+    margin-bottom: 10vh !important;
+    border-radius: 50%;
+    font-size: 2.5em;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+
 .content-section {
     width: 100%;
 }
 
 .content-block {
     width: 75vw;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 0.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding: 0.25em;
     background-color: aliceblue;
     display: flex;
     vertical-align: middle;
+    border-radius: 2.5%;
 }
 
 .content-block:nth-child(even) {

@@ -1,5 +1,5 @@
-import { ProjectBlock } from "./src/project";
-import { PaperBlock } from "./src/paper";
+import { ProjectBlock } from "./src/project.ts";
+import { PaperBlock } from "./src/paper.ts";
 
 const blocks = {
   projects: [
@@ -88,8 +88,17 @@ const blocks = {
   ],
 };
 
+const bioBlurbs = {
+  Reader: "I am a reader!",
+};
+
+function setBioBlurb(version) {
+  blurbSection.innerHTML = bioBlurbs[version];
+}
+
 const projects = document.getElementById("projects");
 const papers = document.getElementById("papers");
+const blurbSection = document.getElementById("interactive-bio-text");
 
 for (const proj of blocks.projects) {
   projects.appendChild(proj.render());
@@ -98,3 +107,5 @@ for (const proj of blocks.projects) {
 for (const paper of blocks.papers) {
   papers.appendChild(paper.render());
 }
+
+setBioBlurb("Reader");

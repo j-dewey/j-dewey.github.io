@@ -40,14 +40,14 @@ class ProjectBlock {
 
     var img: string;
     if (this.link === null) {
-      img = `<img src="${this.image}" class="content-image"/>`;
+      img = `<img src="public/${this.image}" class="content-image"/>`;
     } else {
-      img = `<a href="${this.link}" class="content-image"> <img src="${this.image}" /> </a>`;
+      img = `<a href="${this.link}" class="content-image"> <img src="public/${this.image}" /> </a>`;
     }
 
     var repo = "";
     if (this.repo !== null) {
-      repo = `<a href="${this.repo}"> <img src="github.png" class="github-image"/> </a>`;
+      repo = `<a href="${this.repo}"> <img src="public/github.png" class="github-image"/> </a>`;
     }
 
     div.innerHTML =
