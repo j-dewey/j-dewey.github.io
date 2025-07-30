@@ -89,10 +89,19 @@ const blocks = {
 };
 
 const bioBlurbs = {
-  Reader: "I am a reader!",
+  Reader: `
+  I am a reader!
+  `,
+  Writer: `
+  I enjoy writing in my free time. So far I haven't written anything large
+  and cohesive enough to be published, but I hope to one day have multiple
+  books published.
+  `,
+  Runner: ``,
+  Programmer: ``,
 };
 
-function setBioBlurb(version) {
+export function setBioBlurb(version) {
   blurbSection.innerHTML = bioBlurbs[version];
 }
 
@@ -109,3 +118,10 @@ for (const paper of blocks.papers) {
 }
 
 setBioBlurb("Reader");
+document.querySelectorAll("#interactive-bio-nav button").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const value = btn.innerHTML;
+    console.log(value);
+    setBioBlurb(value);
+  });
+});
