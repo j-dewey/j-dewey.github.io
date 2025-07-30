@@ -4,6 +4,7 @@ class ProjectBlock {
   private desc: string;
   private image: string;
   private link: string | null;
+  private repo: string | null;
 
   public constructor(
     title: string,
@@ -11,12 +12,14 @@ class ProjectBlock {
     desc: string,
     image: string,
     link: string | null,
+    repo: string | null,
   ) {
     this.title = title;
     this.technologies = technologies;
     this.desc = desc;
     this.image = image;
     this.link = link;
+    this.repo = repo;
   }
 
   render_technologies() {
@@ -34,25 +37,30 @@ class ProjectBlock {
   render() {
     let div = document.createElement("div");
     div.className = "content-block";
+
+    var img: string;
     if (this.link === null) {
-      div.innerHTML = `
-      <img src="${this.image}" />
-      <div class="content">
-        <h3> ${this.title} </h3>
-        <p><b>Desc:</b> ${this.desc} </p>
-        <p><b>Tech:</b> ${this.render_technologies()}</p>
-      </div>
-      `;
+      img = `<img src="${this.image}" class="content-image"/>`;
     } else {
-      div.innerHTML = `
-      <a href="${this.link}"><img src="${this.image}" /></a>
+      img = `<a href="${this.link}" class="content-image"> <img src="${this.image}" /> </a>`;
+    }
+
+    var repo = "";
+    if (this.repo !== null) {
+      repo = `<a href="${this.repo}"> <img src="github.png" class="github-image"/> </a>`;
+    }
+
+    div.innerHTML =
+      img +
+      `
       <div class="content">
         <h3> ${this.title} </h3>
         <p><b>Desc:</b> ${this.desc} </p>
         <p><b>Tech:</b> ${this.render_technologies()}</p>
+        ${repo}
       </div>
       `;
-    }
+
     return div;
   }
 }

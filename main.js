@@ -12,6 +12,7 @@ const blocks = {
       `,
       "fact-forecast.png",
       "https://fact.lab.nova.org",
+      null,
     ),
     new ProjectBlock(
       "Frosty Engine",
@@ -20,6 +21,7 @@ const blocks = {
        and a "it just works" philosophy. I am the sole developer.
       `,
       "frosty-engine.png",
+      "https://github.com/j-dewey/frosty_engine",
       "https://github.com/j-dewey/frosty_engine",
     ),
     new ProjectBlock(
@@ -31,6 +33,7 @@ const blocks = {
       `,
       "sillybus.png",
       null,
+      "https://github.com/j-dewey/SillyBus",
     ),
     new ProjectBlock(
       "William & Maps",
@@ -41,6 +44,7 @@ const blocks = {
       `,
       "wm-maps.jpg",
       null,
+      "https://github.com/j-dewey/TribeHacks2024",
     ),
   ],
   papers: [
@@ -70,7 +74,7 @@ const blocks = {
       "weatherman.png",
     ),
     new PaperBlock(
-      "Trigger warning",
+      "Accusations of Corruption, Calls for Justice for Women in Kolkata",
       ["Nayak", "Leong", "Dewey", "Wozniak", "Callabresi"],
       `An analysis of the public's response to horrific events on social media.
        Two events in particular were studied to see how reactions corresponded

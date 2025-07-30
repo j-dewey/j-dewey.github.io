@@ -5,37 +5,56 @@
         <title>JD - Personal Site</title>
         <link rel="stylesheet" href="src/main.css" />
         <link rel="stylesheet" href="src/content.css" />
+        <link rel="stylesheet" href="src/water.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 
     <body>
-        <div class="header-space">
+        <div class="header">
             <div class="header-content">
-                <div class="title-with-buttons">
-                    <h1>Jared Dewey</h1>
-                    <nav class="horizontal">
-                        <a href="#about"> <button>About</button> </a>
-                        <a href="#projects"> <button>Projects</button> </a>
-                        <a href="#papers"> <button>Papers</button> </a>
-                    </nav>
+                <img src="me.png" />
+                <div class="header-text">
+                    <div id="bio">
+                        <h1>Hi! It's me, Jared</h1>
+                        <p>
+                            I'm currently a junior at the College of William &
+                            Mary working towards a dual B.S. in Computational
+                            and Applied Mathematics and Statistics (Mathematical
+                            Biology) and Computer Science (Cyber Security). I'm
+                            a software engineer for the
+                            <a href="https://disinfolab.wm.edu/#/"
+                                >DisinfoLab</a
+                            >
+                            think tank / research group and volunteer for the
+                            <a href="https://nova.org"
+                                >Northern Virginia Internet Access Collective</a
+                            >!
+                        </p>
+                    </div>
+                    <div id="interactive-bio">
+                        <div id="interactive-bio-nav">
+                            <button>Reader</button>
+                            <button>Writer</button>
+                            <button>Runner</button>
+                            <button>Programmer</button>
+                        </div>
+                        <div class=""></div>
+                    </div>
+                    <div class="page-nav">
+                        <nav class="horizontal">
+                            <a href="#projects">
+                                <button><h1>Projects</h1></button>
+                            </a>
+                            <a href="#papers">
+                                <button><h1>Papers</h1></button>
+                            </a>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
 
         <main class="body">
-            <div class="body-block" id="about">
-                <img src="me.png" width="500vw" />
-                <div id="bio">
-                    <h2>Reader, Writer, Runner, Programmer</h2>
-                    <p>
-                        I'm currently a junior at the College of William & Mary
-                        working towards a dual B.S. in Computational and Applied
-                        Mathematics and Statistics (Mathematical Biology) and
-                        Computer Science (Cyber Security).
-                    </p>
-                </div>
-            </div>
-
             <div class="body-block" id="projects">
                 <h2>Projects</h2>
 

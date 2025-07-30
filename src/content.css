@@ -2,26 +2,17 @@
     display: flex;
 }
 
-#about img {
-    float: left;
-}
-
-#bio {
-    float: right;
-    height: 100%;
-}
-
 .content-section {
     width: 100%;
 }
 
 .content-block {
     width: 75vw;
-    height: 25vh;
     margin-top: 5%;
     margin-bottom: 5%;
     background-color: aliceblue;
     display: flex;
+    vertical-align: middle;
 }
 
 .content-block:nth-child(even) {
@@ -32,12 +23,25 @@
     float: left;
 }
 
-.content-block img {
-    max-height: 100%;
-    display: inherit;
+.content-image {
+    height: 25vh;
+    display: block;
+    aspect-ratio: 1/1;
+    justify-self: center;
+    margin: auto;
+}
+
+.content-image img {
+    height: 100%;
     aspect-ratio: 1/1;
 }
 
 .content {
     display: block;
+    padding-left: 0.5em;
+}
+
+.github-image {
+    width: 5vh;
+    height: 5vh !important;
 }
