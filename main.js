@@ -1,5 +1,5 @@
-import { ProjectBlock } from "./src/project.ts";
-import { PaperBlock } from "./src/paper.ts";
+import { ProjectBlock } from "/src/project.ts";
+import { PaperBlock } from "/src/paper.ts";
 
 const blocks = {
   projects: [
@@ -90,14 +90,24 @@ const blocks = {
 
 const bioBlurbs = {
   Reader: `
-  I am a reader!
+  I've loved reading ever since I was little. In that time, I've grown from
+  Goosebumps and Junie B. Jones to Stephen King and Brandon Sanderson. Some of my
+  top picks are "Mistborn," "The Name of the Wind," "The Count of Monte Cristo," and "Something Wicked This Way Comes."
   `,
   Writer: `
   I enjoy writing in my free time. So far I haven't written anything large
-  and cohesive enough to be published, but I hope to one day have multiple
-  books published.
+  and cohesive enough to be published, but I hope to one day! Currently I'm working
+  on a story called "Watermelon Wine." I won't spoil it though, you'll just have to wait for it to be finished!
   `,
-  Runner: ``,
+  Runner: `
+  Running has been a near-daily part of my life for the past 7 years. Here's some PRs:
+  <ul>
+  <li>800m: 2:23 </li>
+  <li>1600m: 5:03 </li>
+  <li>5k: 19:30 </li>
+  <li>8k: 30:something </li>
+  </ul>
+  `,
   Programmer: ``,
 };
 

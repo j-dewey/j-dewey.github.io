@@ -4,6 +4,15 @@ body {
     background: linear-gradient(skyblue, rgb(46, 121, 151));
 }
 
+h1 {
+    font-size: 4vw;
+    margin: 0%;
+}
+
+p {
+    font-size: 1.25em;
+}
+
 .header {
     width: 100vw;
     vertical-align: middle;
@@ -44,11 +53,6 @@ body {
     text-align: center;
 }
 
-.page-nav h1 {
-    font-size: 4em;
-    margin: 0%;
-}
-
 .body {
     padding: 0%;
     margin-left: 0%;
@@ -70,6 +74,23 @@ body {
     margin: auto;
 }
 
+#landing {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+#landing-content {
+    margin: auto;
+    display: block;
+}
+
+#landing-content h1 {
+    font-size: 7.5vw;
+}
+
 #bio {
     margin: 0%;
     min-height: 40%;
@@ -77,7 +98,14 @@ body {
 
 #interactive-bio {
     display: block;
-    min-height: 33%;
+    min-height: 100%;
+    background-color: lightblue;
+}
+
+#interactive-bio-text {
+    padding: 1em;
+    height: 100%;
+    font-size: 1.5vw;
 }
 
 #about {
