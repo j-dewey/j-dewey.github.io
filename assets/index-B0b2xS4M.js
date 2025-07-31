@@ -1,11 +1,11 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&n(r)}).observe(document,{childList:!0,subtree:!0});function o(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function n(t){if(t.ep)return;t.ep=!0;const i=o(t);fetch(t.href,i)}})();class a{constructor(e,o,n,t,i,r){this.title=e,this.technologies=o,this.desc=n,this.image=t,this.link=i,this.repo=r}render_technologies(){let e="";for(const[o,n]of this.technologies.entries())e+=n,o!=this.technologies.length-1&&(e+=","),e+=" ";return e}render(){let e=document.createElement("div");e.className="content-block";var o;this.link===null?o=`<img src="public/${this.image}" class="content-image"/>`:o=`<a href="${this.link}" class="content-image"> <img src="public/${this.image}" /> </a>`;var n="";return this.repo!==null&&(n=`<a href="${this.repo}"> <img src="public/github.png" class="github-image"/> </a>`),e.innerHTML=o+`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))s(t);new MutationObserver(t=>{for(const n of t)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&s(r)}).observe(document,{childList:!0,subtree:!0});function i(t){const n={};return t.integrity&&(n.integrity=t.integrity),t.referrerPolicy&&(n.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?n.credentials="include":t.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function s(t){if(t.ep)return;t.ep=!0;const n=i(t);fetch(t.href,n)}})();class a{constructor(e,i,s,t,n,r){this.title=e,this.technologies=i,this.desc=s,this.image=t,this.link=n,this.repo=r}render_technologies(){let e="";for(const[i,s]of this.technologies.entries())e+=s,i!=this.technologies.length-1&&(e+=","),e+=" ";return e}render(){let e=document.createElement("div");e.className="content-block";var i;this.link===null?i=`<img src="public/${this.image}" class="content-image"/>`:i=`<a href="${this.link}" class="content-image"> <img src="public/${this.image}" /> </a>`;var s="";return this.repo!==null&&(s=`<a href="${this.repo}"> <img src="public/github.png" class="github-image"/> </a>`),e.innerHTML=i+`
       <div class="content">
         <h3> ${this.title} </h3>
         <p><b>Desc:</b> ${this.desc} </p>
         <p><b>Tech:</b> ${this.render_technologies()}</p>
-        ${n}
+        ${s}
       </div>
-      `,e}}class l{constructor(e,o,n,t,i,r){this.title=e,this.authors=o,this.desc=n,this.publication=t,this.link=i,this.image=r}render_authors(){let e="";for(const[o,n]of this.authors.entries())e+=n,o!=this.authors.length-1&&(e+=","),e+=" ";return e}render(){let e=document.createElement("div");return e.className="content-block",e.innerHTML=`
+      `,e}}class l{constructor(e,i,s,t,n,r){this.title=e,this.authors=i,this.desc=s,this.publication=t,this.link=n,this.image=r}render_authors(){let e="";for(const[i,s]of this.authors.entries())e+=s,i!=this.authors.length-1&&(e+=","),e+=" ";return e}render(){let e=document.createElement("div");return e.className="content-block",e.innerHTML=`
       <a href="${this.link}" class="content-image"><img src="public/${this.image}"/></a>
       <div class="content">
         <h3> ${this.title} </h3>
@@ -47,11 +47,15 @@
   on a story called "Watermelon Wine." I won't spoil it though, you'll just have to wait for it to be finished!
   `,Runner:`
   Running has been a near-daily part of my life for the past 7 years. Here's some PRs:
-  <ul>
-  <li>800m: 2:23 </li>
+  <ul style="margin-top:0.25em;">
   <li>1600m: 5:03 </li>
   <li>5k: 19:30 </li>
-  <li>8k: 30:something </li>
+  <li>8k: 30:something (So yeah, I'm not too competetive)</li>
   </ul>
-  `,Programmer:""};function d(s){f.innerHTML=h[s]}const p=document.getElementById("projects"),u=document.getElementById("papers"),f=document.getElementById("interactive-bio-text");for(const s of c.projects)p.appendChild(s.render());for(const s of c.papers)u.appendChild(s.render());d("Reader");document.querySelectorAll("#interactive-bio-nav button").forEach(s=>{s.addEventListener("click",()=>{const e=s.innerHTML;console.log(e),d(e)})});
-//# sourceMappingURL=index-ComaLfi5.js.map
+  `,Programmer:`
+  My programming journey arguably started in the 4th grade when I first learned
+  Scratch. My first "real" programming language was Python which I taught myself in
+  8th grade. Since then I've also picked up Rust, C, some C++, and some Java. Below you
+  can find some recent and ongoing projects!
+  `};function d(o){const e=document.getElementById("interactive-bio-text");e.innerHTML=h[o]}const p=document.getElementById("projects-content"),u=document.getElementById("papers-content");for(const o of c.projects)p.appendChild(o.render());for(const o of c.papers)u.appendChild(o.render());d("Reader");document.querySelectorAll("#interactive-bio-nav button").forEach(o=>{o.addEventListener("click",()=>{const e=o.innerHTML;console.log(e),d(e)})});window.addEventListener("scroll",()=>{document.getElementById("page-nav");const o=document.getElementById("landing");window.scrollY>o.offsetHeight+o.offsetTop});
+//# sourceMappingURL=index-B0b2xS4M.js.map
