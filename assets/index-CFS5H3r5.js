@@ -1,11 +1,11 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))s(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const r of o.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&s(r)}).observe(document,{childList:!0,subtree:!0});function n(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(t){if(t.ep)return;t.ep=!0;const o=n(t);fetch(t.href,o)}})();class a{constructor(e,n,s,t,o,r){this.title=e,this.technologies=n,this.desc=s,this.image=t,this.link=o,this.repo=r}render_technologies(){let e="";for(const[n,s]of this.technologies.entries())e+=s,n!=this.technologies.length-1&&(e+=","),e+=" ";return e}render(){let e=document.createElement("div");e.className="content-block";var n;this.link===null?n=`<img src="public/${this.image}" class="content-image"/>`:n=`<a href="${this.link}" class="content-image"> <img src="public/${this.image}" /> </a>`;var s="";return this.repo!==null&&(s=`<a href="${this.repo}"> <img src="public/github.png" class="github-image"/> </a>`),e.innerHTML=n+`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))s(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&s(r)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();class a{constructor(e,n,s,t,i,r){this.title=e,this.technologies=n,this.desc=s,this.image=t,this.link=i,this.repo=r}render_technologies(){let e="";for(const[n,s]of this.technologies.entries())e+=s,n!=this.technologies.length-1&&(e+=","),e+=" ";return e}render(){let e=document.createElement("div");e.className="content-block";var n;this.link===null?n=`<img src="public/${this.image}" class="content-image"/>`:n=`<a href="${this.link}" class="content-image"> <img src="public/${this.image}" /> </a>`;var s="";return this.repo!==null&&(s=`<a href="${this.repo}"> <img src="public/github.png" class="github-image"/> </a>`),e.innerHTML=n+`
       <div class="content">
         <h3> ${this.title} </h3>
         <p><b>Desc:</b> ${this.desc} </p>
         <p><b>Tech:</b> ${this.render_technologies()}</p>
         ${s}
       </div>
-      `,e}}class l{constructor(e,n,s,t,o,r){this.title=e,this.authors=n,this.desc=s,this.publication=t,this.link=o,this.image=r}render_authors(){let e="";for(const[n,s]of this.authors.entries())e+=s,n!=this.authors.length-1&&(e+=","),e+=" ";return e}render(){let e=document.createElement("div");return e.className="content-block",e.innerHTML=`
+      `,e}}class l{constructor(e,n,s,t,i,r){this.title=e,this.authors=n,this.desc=s,this.publication=t,this.link=i,this.image=r}render_authors(){let e="";for(const[n,s]of this.authors.entries())e+=s,n!=this.authors.length-1&&(e+=","),e+=" ";return e}render(){let e=document.createElement("div");return e.className="content-block",e.innerHTML=`
       <a href="${this.link}" class="content-image"><img src="public/${this.image}"/></a>
       <div class="content">
         <h3> ${this.title} </h3>
@@ -28,12 +28,12 @@
        Explored different injection techniques across several medication types
        and assesed their efficiency. I was responsible for the creation of the
        simulation and graphs.
-      `,"n/a","med_diffusion.pdf","med_diffusion.png"),new l("AI Weatherman",["Dewey","Kollgaard","Miller"],`A regression model capable of determining a day's temperature based
+      `,"n/a","public/med_diffusion.pdf","med_diffusion.png"),new l("AI Weatherman",["Dewey","Kollgaard","Miller"],`A regression model capable of determining a day's temperature based
        on weather heuristics of the preceeding few days. Winner of the
         first "Nazareth Area Science Project" science fair grades 9-12
         division. I was responsible for the collection and cleaning of data
         as well as creating different data sets.
-      `,"n/a","weatherman.pdf","weatherman.png"),new l("Accusations of Corruption, Calls for Justice for Women in Kolkata",["Nayak","Leong","Dewey","Wozniak","Callabresi"],`An analysis of the public's response to horrific events on social media.
+      `,"n/a","public/weatherman.pdf","weatherman.png"),new l("Accusations of Corruption, Calls for Justice for Women in Kolkata",["Nayak","Leong","Dewey","Wozniak","Callabresi"],`An analysis of the public's response to horrific events on social media.
        Two events in particular were studied to see how reactions corresponded
        to policy changes over time. I assisted in the creaton of data collection
        sorting, and presentation of data.
@@ -57,5 +57,5 @@
   Scratch. My first "real" programming language was Python which I taught myself in
   8th grade. Since then I've also picked up Rust, C, some C++, and some Java. Below you
   can find some recent and ongoing projects!
-  `};function d(i){const e=document.getElementById("interactive-bio-text");e.innerHTML=h[i]}const p=document.getElementById("projects-content"),u=document.getElementById("papers-content");for(const i of c.projects)p.appendChild(i.render());for(const i of c.papers)u.appendChild(i.render());d("Reader");document.querySelectorAll("#interactive-bio-nav button").forEach(i=>{i.addEventListener("click",()=>{const e=i.innerHTML;console.log(e),d(e)})});window.addEventListener("scroll",()=>{const i=document.getElementById("page-nav"),e=document.getElementById("landing"),n=document.getElementById("page-nav-name");window.scrollY<e.offsetHeight+e.offsetTop?(i.setAttribute("class","page-nav-initial"),n.innerHTML=""):window.scrollY>e.offsetHeight+e.offsetTop&&(i.setAttribute("class","page-nav-scrolled"),n.innerHTML="JDewey")});
-//# sourceMappingURL=index-CMS7M1bV.js.map
+  `};function d(o){const e=document.getElementById("interactive-bio-text");e.innerHTML=h[o]}const p=document.getElementById("projects-content"),u=document.getElementById("papers-content");for(const o of c.projects)p.appendChild(o.render());for(const o of c.papers)u.appendChild(o.render());d("Reader");document.querySelectorAll("#interactive-bio-nav button").forEach(o=>{o.addEventListener("click",()=>{const e=o.innerHTML;console.log(e),d(e)})});window.addEventListener("scroll",()=>{const o=document.getElementById("page-nav"),e=document.getElementById("landing"),n=document.getElementById("page-nav-name");window.scrollY<e.offsetHeight+e.offsetTop?(o.setAttribute("class","page-nav-initial"),n.innerHTML=""):window.scrollY>e.offsetHeight+e.offsetTop&&(o.setAttribute("class","page-nav-scrolled"),n.innerHTML="JDewey")});
+//# sourceMappingURL=index-CFS5H3r5.js.map
