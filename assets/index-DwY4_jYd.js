@@ -58,4 +58,4 @@
   8th grade. Since then I've also picked up Rust, C, some C++, and some Java. Below you
   can find some recent and ongoing projects!
   `};function d(o){const e=document.getElementById("interactive-bio-text");e.innerHTML=h[o]}const p=document.getElementById("projects-content"),u=document.getElementById("papers-content");for(const o of c.projects)p.appendChild(o.render());for(const o of c.papers)u.appendChild(o.render());d("Reader");document.querySelectorAll("#interactive-bio-nav button").forEach(o=>{o.addEventListener("click",()=>{const e=o.innerHTML;console.log(e),d(e)})});window.addEventListener("scroll",()=>{const o=document.getElementById("page-nav"),e=document.getElementById("landing"),n=document.getElementById("page-nav-name");window.scrollY<e.offsetHeight+e.offsetTop?(o.setAttribute("class","page-nav-initial"),n.innerHTML=""):window.scrollY>e.offsetHeight+e.offsetTop&&(o.setAttribute("class","page-nav-scrolled"),n.innerHTML="JDewey")});
-//# sourceMappingURL=index-BA10sf--.js.map
+//# sourceMappingURL=index-DwY4_jYd.js.map
